@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    max-width: 24px;
+    max-height: 24px;
+  }
+
+  .sidebar-link {
+    @apply flex items-center text-primary font-bold text-white p-3 mb-4 rounded-xl hover:bg-white/30 transition-colors;
+  }
+  .active-link {
+    @apply bg-white text-primary hover:bg-white;
+  }
+
+  .button {
+    @apply rounded-2xl max-h-11 bg-primary-900 text-white w-1/2 px-5 py-2 mx-auto cursor-pointer hover:bg-opacity-80 transition-colors disabled:cursor-not-allowed disabled:bg-opacity-50;
+  }
+  .button-icon {
+    @apply grid gap-2 grid-cols-[1fr_auto] w-fit items-center  bg-primary-900 text-white py-2 px-10 rounded-2xl cursor-pointer hover:bg-opacity-80 transition-colors disabled:cursor-not-allowed disabled:bg-opacity-50;
+  }
+
+  .table-wrapper {
+    @apply px-6 rounded-3xl py-2 bg-white;
+  }
+  .table {
+    @apply w-full;
+  }
+  .table th {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid theme(colors.primary-900);
+  }
+  .table tbody tr {
+    @apply hover:bg-slate-50 transition-colors;
+  }
+  .table td {
+    padding: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: theme(colors.primary.DEFAULT);
+    border-radius: 100vh;
+    cursor: pointer;
+    border: 0;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    opacity: 0.8;
+  }
+}
+
+body {
+  @apply bg-primary p-0 m-0;
+}
+
+#app {
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
